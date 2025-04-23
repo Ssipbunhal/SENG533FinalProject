@@ -1,0 +1,12 @@
+config:
+  target: "https://seng533finalproject-production.up.railway.app"
+  phases:
+    - duration: 60
+      arrivalRate: 20
+  plugins:
+    metrics-by-endpoint: {}
+
+scenarios:
+  - flow:
+      - get:
+          url: "/home"

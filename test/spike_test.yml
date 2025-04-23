@@ -1,0 +1,21 @@
+config:
+  target: "https://wiki-production-3c8b.up.railway.app"  #
+  phases:
+    - duration: 10
+      arrivalRate: 1
+      name: "Warm-up"
+    - duration: 5
+      arrivalRate: 50
+      name: "Sudden spike"
+    - duration: 10
+      arrivalRate: 2
+      name: "Cooldown"
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Spike test homepage"
+    flow:
+      - get:
+          url: "/"

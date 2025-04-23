@@ -1,0 +1,12 @@
+config:
+  target: "https://wiki-production-3c8b.up.railway.app"
+  phases:
+    - duration: 30
+      arrivalRate: 10
+  plugins:
+    metrics-by-endpoint: {}  
+
+scenarios:
+  - flow:
+      - get:
+          url: "/home"

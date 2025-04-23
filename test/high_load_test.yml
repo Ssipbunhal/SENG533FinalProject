@@ -1,0 +1,11 @@
+config:
+  target: "https://wiki-production-3c8b.up.railway.app"
+  phases:
+    - duration: 60
+      arrivalRate: 100  
+      name: "High load phase"
+scenarios:
+  - name: "Homepage access - high load"
+    flow:
+      - get:
+          url: "/home"

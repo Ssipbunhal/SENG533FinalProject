@@ -1,0 +1,15 @@
+config:
+  target: "https://seng533finalproject-production.up.railway.app"
+  phases:
+    - duration: 60         
+      arrivalRate: 50      
+      rampTo: 200          
+      name: "burst-load"
+  plugins:
+    metrics-by-endpoint: {}
+
+scenarios:
+  - name: "Burst homepage access"
+    flow:
+      - get:
+          url: "/home"

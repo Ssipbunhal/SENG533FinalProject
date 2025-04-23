@@ -1,0 +1,20 @@
+config:
+  target: "https://seng533finalproject-production.up.railway.app"
+  phases:
+    - duration: 10
+      arrivalRate: 1
+      name: "Warm-up"
+    - duration: 5
+      arrivalRate: 50
+      name: "Sudden spike"
+    - duration: 10
+      arrivalRate: 2
+      name: "Cooldown"
+  plugins:
+    metrics-by-endpoint: {}
+
+scenarios:
+  - name: "Spike test homepage"
+    flow:
+      - get:
+          url: "/home"

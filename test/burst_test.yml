@@ -1,0 +1,16 @@
+config:
+  target: "https://wiki-production-3c8b.up.railway.app"
+  phases:
+    - duration: 60        
+      arrivalRate: 50      
+      rampTo: 200          
+      name: "burst-load"
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Burst homepage access"
+    flow:
+      - get:
+          url: "/home"

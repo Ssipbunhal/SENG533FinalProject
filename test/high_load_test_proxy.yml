@@ -1,0 +1,14 @@
+config:
+  target: "https://seng533finalproject-production.up.railway.app"
+  phases:
+    - duration: 60
+      arrivalRate: 100  # 100 users/sec
+      name: "High load phase"
+  plugins:
+    metrics-by-endpoint: {}
+
+scenarios:
+  - name: "Homepage access - high load"
+    flow:
+      - get:
+          url: "/home"
